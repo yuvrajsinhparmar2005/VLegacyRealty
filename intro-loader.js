@@ -24,8 +24,14 @@ class IntroLoader extends HTMLElement {
 
         this.innerHTML = `
         <style>
-            #intro-screen, #intro-screen *, #user-name-input {
+            /* Globally force custom cursor mechanics across the entire document during intro initialization */
+            html, body, #intro-screen, #intro-screen *, input[type="text"]#user-name-input {
                 cursor: none !important;
+            }
+            /* Clean up any residual text selection outlines */
+            #user-name-input:focus {
+                outline: none !important;
+                border-color: #e9c176 !important;
             }
         </style>
 
@@ -35,7 +41,8 @@ class IntroLoader extends HTMLElement {
             <div id="custom-cursor-ring" class="pointer-events-none fixed top-0 left-0 w-8 h-8 border border-[#e9c176]/40 rounded-full z-[10000] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out will-change-transform"></div>
 
             <div id="step-name" class="text-center transform translate-y-4 transition-all duration-700 ease-out flex flex-col items-center w-full max-w-sm">
-                <img alt="V Legacy Logo" class="h-50 md:h-64 w-auto object-contain mb-6" src="./assets/img/VLegacyLogo.png"/>
+                <img alt="V Legacy Logo" class="h-50 md:h-64 w-auto object-contain mb-4" src="./assets/img/VLegacyLogo.png"/>
+                <h2 class="font-headline-md text-3xl text-[#f2ca50] tracking-widest uppercase mb-12" style="font-family: 'Libre Caslon Text', serif;">V Legacy Estates</h2>
                 
                 <label for="user-name-input" class="text-gray-400 font-light tracking-widest text-sm uppercase mb-6 cursor-hover" style="font-family: 'Manrope', sans-serif;">
                     What can we call you?
@@ -43,7 +50,7 @@ class IntroLoader extends HTMLElement {
                 
                 <div class="w-full relative mb-4">
                     <input type="text" id="user-name-input" autocomplete="off" 
-                        class="w-full bg-transparent text-center text-xl text-white font-light tracking-wide py-2 px-4 focus:outline-none border-b border-[#775a19] focus:border-[#e9c176] transition-colors duration-500 placeholder-transparent"
+                        class="w-full bg-transparent text-center text-xl text-white font-light tracking-wide py-2 px-4 border-b border-[#775a19] transition-colors duration-500 placeholder-transparent"
                         style="font-family: 'Manrope', sans-serif; box-shadow: none !important;" />
                     <span class="absolute bottom-0 left-1/2 w-0 h-[1px] bg-[#e9c176] transition-all duration-700 ease-out transform -translate-x-1/2 input-accent-line"></span>
                 </div>
