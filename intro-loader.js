@@ -42,7 +42,6 @@ class IntroLoader extends HTMLElement {
 
             <div id="step-name" class="text-center transform translate-y-4 transition-all duration-700 ease-out flex flex-col items-center w-full max-w-sm">
                 <img alt="V Legacy Logo" class="h-50 md:h-64 w-auto object-contain mb-4" src="./assets/img/VLegacyLogo.png"/>
-                <h2 class="font-headline-md text-3xl text-[#f2ca50] tracking-widest uppercase mb-12" style="font-family: 'Libre Caslon Text', serif;">V Legacy Estates</h2>
                 
                 <label for="user-name-input" class="text-gray-400 font-light tracking-widest text-sm uppercase mb-6 cursor-hover" style="font-family: 'Manrope', sans-serif;">
                     What can we call you?
