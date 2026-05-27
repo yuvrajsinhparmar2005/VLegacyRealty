@@ -38,7 +38,7 @@ class IntroLoader extends HTMLElement {
 
             <!-- STEP 1: NAME INPUT PANEL -->
             <div id="step-name" class="text-center transform translate-y-4 transition-all duration-700 ease-out flex flex-col items-center w-full max-w-sm">
-                <img alt="V Legacy Logo" class="h-20 w-auto object-contain mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHrjZiADmCGYppR1_9TNE22gf103J57MMI5mffUQTVr1qZz7XGKNSaIyjME_KZuHZ7yOdrvL7v5ZnswetGUIa_-1cnCnf_PyJaVMqdjQJq9RrQdvCk_TANZ2Em7M9E5GJjsx8kQdQv9H-hIcFTJ-9M9QABVqGgOtB-q5D0gi4eDShnyqH9_oNfZJx8dv9sPNi4mMe_JtvCh3zkVXYt_26mxQi1JkmNFHZOw4elqnU1kbtd4mtujbEBPaFxDk2aUIQka7D3_JYwYYY"/>
+                <img alt="V Legacy Logo" class="h-50 w-auto object-contain mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHrjZiADmCGYppR1_9TNE22gf103J57MMI5mffUQTVr1qZz7XGKNSaIyjME_KZuHZ7yOdrvL7v5ZnswetGUIa_-1cnCnf_PyJaVMqdjQJq9RrQdvCk_TANZ2Em7M9E5GJjsx8kQdQv9H-hIcFTJ-9M9QABVqGgOtB-q5D0gi4eDShnyqH9_oNfZJx8dv9sPNi4mMe_JtvCh3zkVXYt_26mxQi1JkmNFHZOw4elqnU1kbtd4mtujbEBPaFxDk2aUIQka7D3_JYwYYY"/>
                 <h2 class="font-headline-md text-3xl text-[#f2ca50] tracking-widest uppercase mb-12" style="font-family: 'Libre Caslon Text', serif;">V Legacy Estates</h2>
                 
                 <label for="user-name-input" class="text-gray-400 font-light tracking-widest text-sm uppercase mb-6 cursor-hover" style="font-family: 'Manrope', sans-serif;">
