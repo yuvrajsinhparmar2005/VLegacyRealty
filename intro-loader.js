@@ -23,7 +23,6 @@ class IntroLoader extends HTMLElement {
         }
 
         this.innerHTML = `
-        <!-- Added a local scoped style block to brutally strip default system cursors from text elements inside the component -->
         <style>
             #intro-screen, #intro-screen *, #user-name-input {
                 cursor: none !important;
@@ -32,13 +31,11 @@ class IntroLoader extends HTMLElement {
 
         <div id="intro-screen" class="fixed inset-0 z-[9999] bg-[#0d141d] flex flex-col items-center justify-center transition-all duration-1000 ease-in-out px-4 select-none">
             
-            <!-- PREMIUM CUSTOM CURSOR ELEMENTS -->
             <div id="custom-cursor" class="pointer-events-none fixed top-0 left-0 w-3 h-3 bg-[#e9c176] rounded-full z-[10000] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out will-change-transform"></div>
             <div id="custom-cursor-ring" class="pointer-events-none fixed top-0 left-0 w-8 h-8 border border-[#e9c176]/40 rounded-full z-[10000] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out will-change-transform"></div>
 
-            <!-- STEP 1: NAME INPUT PANEL -->
             <div id="step-name" class="text-center transform translate-y-4 transition-all duration-700 ease-out flex flex-col items-center w-full max-w-sm">
-                <img alt="V Legacy Logo" class="h-50 w-50 object-contain mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHrjZiADmCGYppR1_9TNE22gf103J57MMI5mffUQTVr1qZz7XGKNSaIyjME_KZuHZ7yOdrvL7v5ZnswetGUIa_-1cnCnf_PyJaVMqdjQJq9RrQdvCk_TANZ2Em7M9E5GJjsx8kQdQv9H-hIcFTJ-9M9QABVqGgOtB-q5D0gi4eDShnyqH9_oNfZJx8dv9sPNi4mMe_JtvCh3zkVXYt_26mxQi1JkmNFHZOw4elqnU1kbtd4mtujbEBPaFxDk2aUIQka7D3_JYwYYY"/>
+                <img alt="V Legacy Logo" class="h-50 md:h-64 w-auto object-contain mb-6" src="./assets/img/VLegacyLogo.png"/>
                 
                 <label for="user-name-input" class="text-gray-400 font-light tracking-widest text-sm uppercase mb-6 cursor-hover" style="font-family: 'Manrope', sans-serif;">
                     What can we call you?
@@ -56,7 +53,6 @@ class IntroLoader extends HTMLElement {
                 </p>
             </div>
 
-            <!-- STEP 2: THEME SELECTION PANEL -->
             <div id="step-theme" class="hidden text-center opacity-0 transform translate-y-4 transition-all duration-700 ease-out flex flex-col items-center w-full max-w-md">
                 <span class="text-[#e9c176] font-light tracking-[0.2em] text-sm uppercase mb-2" id="welcome-greeting" style="font-family: 'Manrope', sans-serif;"></span>
                 <h3 class="font-headline-md text-2xl text-white tracking-wide mb-12" style="font-family: 'Libre Caslon Text', serif;">Select Your Experience Style</h3>
@@ -110,7 +106,6 @@ class IntroLoader extends HTMLElement {
             dot.classList.remove('scale-50');
         };
 
-        // Capture hover states safely inside the component hierarchy tree
         this.addEventListener('mouseenter', (e) => {
             if (e.target.closest('#user-name-input, .cursor-hover')) {
                 applyHoverEffect();
