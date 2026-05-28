@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About Us | V Legacy Estates</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script src="navbar.js" defer></script>
+    <script src="footer.js" defer></script>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gold-underline::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: #775a19;
+            transition: width 0.3s ease;
+        }
+        .gold-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#263142", "outline": "#75777e", "surface-container-low": "#f0f3ff", "inverse-on-surface": "#ebf1ff", "inverse-primary": "#b6c7e9", "on-secondary-fixed-variant": "#5d4201", "tertiary-fixed": "#e2e2e2", "secondary-container": "#fed488", "on-surface-variant": "#44474d", "error": "#ba1a1a", "surface-variant": "#d8e3fa", "primary-fixed": "#d6e3ff", "surface-tint": "#4e5f7c", "primary-fixed-dim": "#b6c7e9", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "surface-dim": "#cfdaf1", "secondary-fixed": "#ffdea5", "on-secondary": "#ffffff", "secondary-fixed-dim": "#e9c176", "on-background": "#111c2c", "surface-container-lowest": "#ffffff", "tertiary-container": "#1b1d1d", "secondary": "#775a19", "surface-container-highest": "#d8e3fa", "on-primary-container": "#7586a5", "primary-container": "#0a1d37", "on-surface": "#111c2c", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#454747", "on-secondary-container": "#785a1a", "tertiary-fixed-dim": "#c6c6c7", "on-tertiary-fixed": "#1a1c1c", "surface-container-high": "#dee8ff", "outline-variant": "#c5c6ce", "background": "#f9f9ff", "on-error": "#ffffff", "primary": "#00030a", "surface-container": "#e7eeff", "on-primary-fixed": "#081c36", "on-primary-fixed-variant": "#364763", "on-tertiary-container": "#848585", "error-container": "#ffdad6", "surface": "#f9f9ff", "tertiary": "#020203", "surface-bright": "#f9f9ff", "on-secondary-fixed": "#261900"
+                    },
+                    "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    "spacing": { "stack-sm": "16px", "margin-mobile": "20px", "margin-desktop": "80px", "section-padding": "120px", "stack-md": "32px", "container-max": "1440px", "stack-lg": "64px", "base": "8px", "gutter": "32px" },
+                    "fontFamily": { "body-md": ["Manrope"], "label-caps": ["Manrope"], "display-lg-mobile": ["Libre Caslon Text"], "button": ["Manrope"], "display-lg": ["Libre Caslon Text"], "body-lg": ["Manrope"], "headline-lg": ["Libre Caslon Text"], "headline-md": ["Libre Caslon Text"] },
+                    "fontSize": { "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}], "label-caps": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "700"}], "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}], "button": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}], "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}], "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}], "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}] }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+    <top-navbar></top-navbar>
+
+    <main class="pt-20">
+        <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover brightness-[0.4]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7FK6QKhe1qKg3cNJ80I238oOgpkQmoMqJt7gsBijp9J_WLNlr8Z3rw1TxC5Vc564IhTTsSU40qYJnjMFmJyJf1Y8Rlqv1OdT6JAI7VUOjc-AJGOZVT131LZc2VPRFM5mc7k2OHDeu4hEs-9Qp9s_9oqByWZTM4zgaAhmkYJGHovrEO3pOrXlC_mYDPhf52LHBTbDeTiL5Hfo3hd8zjvNOAADt0AVRGdP5WHpDP8nRFLeIMOYuIVs9YnsBoHinTobmoKVYS5mZzfg"/>
+            </div>
+            <div class="relative z-10 text-center px-margin-mobile reveal" id="hero-reveal">
+                <p class="font-label-caps text-label-caps text-secondary-container mb-4">ESTABLISHED 1984</p>
+                <h1 class="font-display-lg text-display-lg md:text-display-lg text-on-primary max-w-4xl mx-auto">Architecture that defines a generation.</h1>
+            </div>
+        </section>
+
+        <section class="py-section-padding px-margin-desktop max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-start">
+                <div class="reveal">
+                    <h2 class="font-headline-lg text-headline-lg mb-stack-md">A Legacy of <br/><span class="text-secondary italic">Excellence.</span></h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-stack-lg">
+                        Since our inception, V Legacy has been at the forefront of the luxury real estate sector, specializing in the curation of architectural masterpieces and historic restorations for the world's most discerning collectors.
+                    </p>
+                    <div class="space-y-12 relative">
+                        <div class="absolute left-[7px] top-2 bottom-0 w-[2px] bg-secondary/30"></div>
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-secondary shadow-[0_0_10px_rgba(119,90,25,0.5)]"></div>
+                            <h3 class="font-headline-md text-headline-md text-secondary mb-1">1984</h3>
+                            <p class="font-label-caps text-label-caps text-on-surface-variant mb-2">FOUNDATION</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">The firm was established in Mayfair, London, with a vision to redefine the high-end residential market through unparalleled architectural integrity.</p>
+                        </div>
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-secondary"></div>
+                            <h3 class="font-headline-md text-headline-md text-secondary mb-1">1998</h3>
+                            <p class="font-label-caps text-label-caps text-on-surface-variant mb-2">GLOBAL EXPANSION</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Opened our doors in Geneva and New York, bridging European heritage with modern American luxury.</p>
+                        </div>
+                        <div class="relative pl-10">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-secondary"></div>
+                            <h3 class="font-headline-md text-headline-md text-secondary mb-1">2012</h3>
+                            <p class="font-label-caps text-label-caps text-on-surface-variant mb-2">CURATED SERVICES</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Launched the Bespoke Restoration Wing, dedicated to preserving Grade II listed heritage assets for future generations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-[600px] md:h-[800px] reveal delay-200">
+                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDocyBKEBSuFor1Yx9-0V1HpBlmswCR-b4tT9q5CAE3otbDvR5XkBYb8LXrl_N3d4sSk3YleetWiLxn6Df-_4dg-Zma86sWYVrmLy3CabT8WCBGpBav7G3nXxyMbKaEFD2-cz5tA1nVjDjKuCLpqSRhbfRASUB8DrMjLPy-jmBYUm9t-g2g18yZA5D01SzETAviYIRygAVBnzXna-9rzJf180VrmQ8obgmeNnQfsogNYd3_plS0ov4b-liytVzV9QKbCFtqD14cKyU"/>
+                    <div class="absolute -bottom-10 -left-10 bg-primary p-stack-md text-on-primary hidden md:block">
+                        <p class="font-headline-md text-headline-md">40+</p>
+                        <p class="font-label-caps text-label-caps text-secondary">YEARS OF HERITAGE</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-low py-section-padding">
+            <div class="px-margin-desktop max-w-container-max mx-auto text-center mb-section-padding">
+                <h2 class="font-headline-lg text-headline-lg reveal">The Visionaries</h2>
+                <div class="w-20 h-0.5 bg-secondary mx-auto mt-4 reveal"></div>
+            </div>
+            <div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <div class="reveal">
+                    <div class="aspect-[3/4] overflow-hidden mb-stack-md relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEZyjqSKI9sbikthMY19SnqDoLPqCSMEBaDbQ9qv4AQXRhHwLUuBoZ07ABDE4EGgzSSiBOfhlbYnoppqvJXoY_inI4e1h8VbYsfpZLNu2krQSuhOGKv7b8yUH_YxlpwTSCMfdgqA7-pSuKnpISUO7sVm8FAJNBwBzZNZgYfwYUlQU3i1xfJaWXk88zKCX2FDpG0uMh-PCx6F_LZkwPBSNAXUB6uNmBcdMXbySoWSqbfhcO-w1GumCVpW89ltG0dR6Nb65ANB9RCY8"/>
+                        <div class="absolute bottom-0 left-0 w-full bg-secondary px-6 py-4">
+                            <h4 class="font-button text-on-primary tracking-widest uppercase">Alexander Sterling</h4>
+                            <p class="font-label-caps text-[10px] text-on-primary/70">CHIEF EXECUTIVE OFFICER</p>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-on-surface-variant">A veteran of high-end real estate with over 30 years of experience in global asset management.</p>
+                </div>
+                <div class="reveal delay-150">
+                    <div class="aspect-[3/4] overflow-hidden mb-stack-md relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK5lpr_ObnzGm1e8ZIO7d8ZsP1GALdTp_YVMrs7HgBJYMZtkEh_WN5TrD3cgxVyFWmeLTQQnLR4ZlOWfHf7Ct_M4cQ1hs8vKd8Zjh9B1wjwcvXFW0s8Ku2TR_Ef8WoQYrxOA50JBqXGZo7wowfMM_V0AoB-MvXspbomRt1BvrRI9i37axogw2yfCnjh1YVtk5YVh48lWYLFyzC6MLzx1uDUHHtwbrwLVm8OsWsEOTHq0RKNfxzHE42Um4u86_pW-UX_PMg8DvnOOc"/>
+                        <div class="absolute bottom-0 left-0 w-full bg-secondary px-6 py-4">
+                            <h4 class="font-button text-on-primary tracking-widest uppercase">Elena Vane</h4>
+                            <p class="font-label-caps text-[10px] text-on-primary/70">DESIGN PRINCIPAL</p>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-on-surface-variant">An award-winning architect known for her unique ability to blend contemporary forms with classical proportions.</p>
+                </div>
+                <div class="reveal delay-300">
+                    <div class="aspect-[3/4] overflow-hidden mb-stack-md relative group">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxK50rb-kwbL0CGMJQCXLAFNxWXzaVp-lFV2fD6-JOTNde-W6dUKrc2O-xAurcC1JDfMQC9N8KuGYB24ViwmqoVq6nXPa19wRjgQQGqTtyH3lebS6fJTIuLRVbcBVpGSMnaWawtpUkob-olyZoqI4qYtg24_72ggjx9_sn7F9k2sGHKmMjfu9bUyMgzyw5TJC9Tspsz_m_NJbv6kuv3Aq9OXRMvFgEB9L-N3GU7LDbWVYma80RmEiIC2BsBOAsz9EqceCCeCm0WQQ"/>
+                        <div class="absolute bottom-0 left-0 w-full bg-secondary px-6 py-4">
+                            <h4 class="font-button text-on-primary tracking-widest uppercase">Julian Drax</h4>
+                            <p class="font-label-caps text-[10px] text-on-primary/70">HEAD OF INVESTMENTS</p>
+                        </div>
+                    </div>
+                    <p class="font-body-md text-on-surface-variant">Leading our investor relations and global expansion strategy with a focus on sustainable growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-primary-container text-on-primary py-section-padding overflow-hidden">
+            <div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+                <div class="reveal">
+                    <h2 class="font-headline-lg text-headline-lg text-on-primary mb-stack-md">A Global Footprint.</h2>
+                    <p class="font-body-lg text-body-lg text-on-primary-container/80 mb-stack-lg">
+                        From our historic headquarters in London to our strategic hubs across Asia and the Americas, V Legacy operates with a truly global perspective.
+                    </p>
+                    <div class="grid grid-cols-2 gap-stack-md">
+                        <div>
+                            <p class="font-label-caps text-secondary mb-1">EUROPE</p>
+                            <ul class="font-body-md space-y-1 opacity-70">
+                                <li>London</li>
+                                <li>Geneva</li>
+                                <li>Monaco</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-label-caps text-secondary mb-1">AMERICAS</p>
+                            <ul class="font-body-md space-y-1 opacity-70">
+                                <li>New York</li>
+                                <li>Miami</li>
+                                <li>Los Angeles</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-label-caps text-secondary mb-1">ASIA PACIFIC</p>
+                            <ul class="font-body-md space-y-1 opacity-70">
+                                <li>Singapore</li>
+                                <li>Hong Kong</li>
+                                <li>Sydney</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-label-caps text-secondary mb-1">MIDDLE EAST</p>
+                            <ul class="font-body-md space-y-1 opacity-70">
+                                <li>Dubai</li>
+                                <li>Riyadh</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal delay-200">
+                    <div class="w-full aspect-square bg-primary rounded-full flex items-center justify-center relative p-8 shadow-2xl overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#7586a5_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                        <img class="w-full h-full object-contain mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABLIjhYTIkN3i_z13JuU40VX0vlXBWZRavqNBr2VBwsCNCEyg4OtoRaAHiA5aN8-feyDsyG2BAg6TZvZa7jFQZ2MZNu4sCeYE844K7MRvFAy3OG7mOtB3eefpbniQWH1RwFXWlYebIR9cC2eGQw_mE5v1COeV2h1Yg7dsK7EYIDYy9DELjiBYQ4wzCFpqvlKDYSu4Ke96bcXdoxDMouC8vOwI-aIA__T90xv-C8xrXplwXcZB8MKNm1_eR55igd1rh_hpg4bDSx_U"/>
+                        <div class="absolute top-[35%] left-[15%] w-2 h-2 bg-secondary rounded-full animate-pulse shadow-[0_0_10px_#775a19]"></div>
+                        <div class="absolute top-[40%] left-[45%] w-2 h-2 bg-secondary rounded-full animate-pulse shadow-[0_0_10px_#775a19]"></div>
+                        <div class="absolute top-[30%] left-[50%] w-2 h-2 bg-secondary rounded-full animate-pulse shadow-[0_0_10px_#775a19]"></div>
+                        <div class="absolute top-[60%] left-[75%] w-2 h-2 bg-secondary rounded-full animate-pulse shadow-[0_0_10px_#775a19]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-section-padding bg-surface">
+            <div class="px-margin-desktop max-w-4xl mx-auto text-center reveal">
+                <h2 class="font-headline-lg text-headline-lg mb-stack-md italic">Ready to Begin Your Legacy?</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
+                    Whether you are acquiring a historic estate or seeking a partner for architectural excellence, our advisors are here to guide you through every step of the journey.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <button class="bg-primary text-on-primary font-button px-10 py-5 hover:bg-secondary transition-all duration-300 w-full md:w-auto">Partner with Excellence</button>
+                    <button class="border border-primary text-primary font-button px-10 py-5 hover:bg-primary hover:text-on-primary transition-all duration-300 w-full md:w-auto">View Portfolio</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script>
+        // Intersection Observer for Reveal Animations
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Background Parallax for Hero
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroImg = document.querySelector('section img');
+            if (heroImg) heroImg.style.transform = `translateY(${scroll * 0.3}px)`;
+        });
+
+        // Initialize animations on load
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const hero = document.getElementById('hero-reveal');
+                if (hero) hero.classList.add('active');
+            }, 100);
+        });
+    </script>
+</body>
+</html>

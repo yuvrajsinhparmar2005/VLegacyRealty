@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio | V Legacy Estates</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script src="navbar.js" defer></script>
+    <script src="footer.js" defer></script>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#263142", "outline": "#75777e", "surface-container-low": "#f0f3ff", "inverse-on-surface": "#ebf1ff", "inverse-primary": "#b6c7e9", "on-secondary-fixed-variant": "#5d4201", "tertiary-fixed": "#e2e2e2", "secondary-container": "#fed488", "on-surface-variant": "#44474d", "error": "#ba1a1a", "surface-variant": "#d8e3fa", "primary-fixed": "#d6e3ff", "surface-tint": "#4e5f7c", "primary-fixed-dim": "#b6c7e9", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "surface-dim": "#cfdaf1", "secondary-fixed": "#ffdea5", "on-secondary": "#ffffff", "secondary-fixed-dim": "#e9c176", "on-background": "#111c2c", "surface-container-lowest": "#ffffff", "tertiary-container": "#1b1d1d", "secondary": "#775a19", "surface-container-highest": "#d8e3fa", "on-primary-container": "#7586a5", "primary-container": "#0a1d37", "on-surface": "#111c2c", "on-primary": "#ffffff", "on-tertiary-fixed-variant": "#454747", "on-secondary-container": "#785a1a", "tertiary-fixed-dim": "#c6c6c7", "on-tertiary-fixed": "#1a1c1c", "surface-container-high": "#dee8ff", "outline-variant": "#c5c6ce", "background": "#f9f9ff", "on-error": "#ffffff", "primary": "#00030a", "surface-container": "#e7eeff", "on-primary-fixed": "#081c36", "on-primary-fixed-variant": "#364763", "on-tertiary-container": "#848585", "error-container": "#ffdad6", "surface": "#f9f9ff", "tertiary": "#020203", "surface-bright": "#f9f9ff", "on-secondary-fixed": "#261900"
+                    },
+                    "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    "spacing": { "stack-sm": "16px", "margin-mobile": "20px", "margin-desktop": "80px", "section-padding": "120px", "stack-md": "32px", "container-max": "1440px", "stack-lg": "64px", "base": "8px", "gutter": "32px" },
+                    "fontFamily": { "body-md": ["Manrope"], "label-caps": ["Manrope"], "display-lg-mobile": ["Libre Caslon Text"], "button": ["Manrope"], "display-lg": ["Libre Caslon Text"], "body-lg": ["Manrope"], "headline-lg": ["Libre Caslon Text"], "headline-md": ["Libre Caslon Text"] },
+                    "fontSize": { "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}], "label-caps": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.15em", "fontWeight": "700"}], "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}], "button": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}], "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}], "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}], "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}], "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}] }
+                },
+            },
+        }
+    </script>
+    <style>
+        .property-card { opacity: 0; transform: translateY(30px); }
+        .property-card.visible { opacity: 1; transform: translateY(0); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        
+        .glow-button { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+        .glow-button:hover { box-shadow: 0 0 15px rgba(119, 90, 25, 0.5); transform: scale(1.02); }
+
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+
+        /* Custom Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(25, 32, 42, 0.7) !important;
+            backdrop-filter: blur(25px) saturate(160%) !important;
+            -webkit-backdrop-filter: blur(25px) saturate(160%) !important;
+            border: 1px solid rgba(233, 193, 118, 0.18) !important;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6) !important;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+
+    <div id="phone-modal-gateway" class="fixed inset-0 z-[10000] bg-[#0d141d]/50 backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-700 px-4">
+        <div class="glass-panel p-8 md:p-12 max-w-xl w-full text-center transform scale-95 transition-all duration-700 ease-out rounded-lg">
+            
+            <div id="gateway-step-1" class="transition-all duration-500 max-w-md mx-auto">
+                <div class="w-12 h-12 rounded-full bg-[#e9c176]/10 flex items-center justify-center mx-auto mb-6 border border-[#e9c176]/30">
+                    <span class="material-symbols-outlined text-[#e9c176] text-xl">lock</span>
+                </div>
+                <h2 class="text-white text-2xl mb-2 tracking-wide font-normal" style="font-family: 'Libre Caslon Text', serif;">Private Verification</h2>
+                <p class="text-gray-300/80 text-sm tracking-wide mb-8 font-light">Please register your contact digits to securely access our portfolio collection.</p>
+                
+                <div class="w-full relative mb-8">
+                    <input type="tel" id="gateway-phone-input" autocomplete="off" placeholder="Your Phone Number"
+                        class="w-full bg-transparent text-center text-xl text-white font-light tracking-widest py-2 px-4 focus:outline-none border-t-0 border-x-0 border-b border-[#775a19] focus:border-[#e9c176] focus:ring-0 transition-colors duration-500 placeholder-gray-500" />
+                    <span class="absolute bottom-0 left-1/2 w-0 h-[1px] bg-[#e9c176] transition-all duration-500 ease-out transform -translate-x-1/2 input-accent-line"></span>
+                </div>
+
+                <button id="submit-gateway-phone" class="w-full bg-secondary text-white py-4 font-button tracking-widest text-xs uppercase hover:bg-[#8e6c1e] active:scale-95 transition-all duration-300 rounded-sm shadow-lg shadow-black/20">
+                    Next Step
+                </button>
+            </div>
+
+            <div id="gateway-step-2" class="hidden opacity-0 transition-all duration-500 transform translate-y-4">
+                <div class="w-12 h-12 rounded-full bg-[#e9c176]/10 flex items-center justify-center mx-auto mb-6 border border-[#e9c176]/30">
+                    <span class="material-symbols-outlined text-[#e9c176] text-xl">real_estate_agent</span>
+                </div>
+                <h2 class="text-white text-2xl mb-2 tracking-wide font-normal" style="font-family: 'Libre Caslon Text', serif;">Portfolio Preferences</h2>
+                <p class="text-gray-300/80 text-sm tracking-wide mb-8 font-light">Select the structural aesthetic aligned with your investment targets.</p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left">
+                    <label class="group relative flex items-center justify-between p-4 border border-white/10 bg-white/5 hover:border-[#e9c176] transition-all duration-300 cursor-pointer">
+                        <div class="flex flex-col">
+                            <span class="text-white text-sm font-semibold tracking-wide">Country Estates</span>
+                            <span class="text-gray-400 text-xs mt-0.5">Classical Heritage</span>
+                        </div>
+                        <input type="radio" name="asset_interest" value="Country Estate" class="text-secondary focus:ring-0 bg-transparent border-white/20 w-4 h-4 ml-2" checked />
+                    </label>
+
+                    <label class="group relative flex items-center justify-between p-4 border border-white/10 bg-white/5 hover:border-[#e9c176] transition-all duration-300 cursor-pointer">
+                        <div class="flex flex-col">
+                            <span class="text-white text-sm font-semibold tracking-wide">Modern Penthouses</span>
+                            <span class="text-gray-400 text-xs mt-0.5">Contemporary Urban</span>
+                        </div>
+                        <input type="radio" name="asset_interest" value="Modern Penthouse" class="text-secondary focus:ring-0 bg-transparent border-white/20 w-4 h-4 ml-2" />
+                    </label>
+
+                    <label class="group relative flex items-center justify-between p-4 border border-white/10 bg-white/5 hover:border-[#e9c176] transition-all duration-300 cursor-pointer">
+                        <div class="flex flex-col">
+                            <span class="text-white text-sm font-semibold tracking-wide">Historical Landmarks</span>
+                            <span class="text-gray-400 text-xs mt-0.5">Restored Sanctuary</span>
+                        </div>
+                        <input type="radio" name="asset_interest" value="Historical Landmark" class="text-secondary focus:ring-0 bg-transparent border-white/20 w-4 h-4 ml-2" />
+                    </label>
+
+                    <label class="group relative flex items-center justify-between p-4 border border-white/10 bg-white/5 hover:border-[#e9c176] transition-all duration-300 cursor-pointer">
+                        <div class="flex flex-col">
+                            <span class="text-white text-sm font-semibold tracking-wide">Private Islands</span>
+                            <span class="text-gray-400 text-xs mt-0.5">Absolute Exclusivity</span>
+                        </div>
+                        <input type="radio" name="asset_interest" value="Private Island" class="text-secondary focus:ring-0 bg-transparent border-white/20 w-4 h-4 ml-2" />
+                    </label>
+                </div>
+
+                <button id="submit-gateway-requirement" class="w-full bg-secondary text-white py-4 font-button tracking-widest text-xs uppercase hover:bg-[#8e6c1e] active:scale-95 transition-all duration-300 rounded-sm shadow-lg shadow-black/20">
+                    Access Portfolio
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <top-navbar></top-navbar>
+
+    <main class="pt-20">
+        <section class="relative h-[60vh] flex items-center justify-center overflow-hidden mb-stack-lg">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover brightness-[0.35]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV4FFEBrm4jX1Ny9JshWbqUI1UOT5z-069IC-Od5fwg1A_peJsfXyvF0ywHHVK6CIr50sThA1XRXnGl2Iq56oXKP9q2-t24bJeWxAP1uRtzjqDiodKf1vfqKrGff1_mh5njVWl6QnZ33dbt4v1913Vz71M0qHWJhWOmhIEWDfwYAOrjERUkPeIyK3WJSkiTEVHIzhsMkqkhc6AROH7VE32jKiKxchsM3Q93lma9DFBu60QN4O5CywQII-aiQIpnkxfdnrvzVIX2Mc"/>
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface/90"></div>
+            </div>
+            <div class="relative z-10 text-center px-margin-mobile">
+                <span class="font-label-caps text-label-caps text-secondary-container mb-4 block tracking-[0.25em]">EXCLUSIVELY CURATED</span>
+                <h1 class="font-display-lg text-5xl md:text-6xl text-white tracking-tight" style="font-family: 'Libre Caslon Text', serif;">Our Portfolio</h1>
+                <div class="w-24 h-[1px] bg-secondary/50 mx-auto mt-6 mb-6"></div>
+                <p class="font-body-lg text-body-lg text-white/80 max-w-2xl mx-auto px-4">
+                    Explore a selection of the world's most distinguished architectural masterpieces, curated for those who seek more than just a home—they seek a legacy.
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-container-max mx-auto px-margin-desktop mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="property-grid">
+                <article class="property-card group bg-surface-container-lowest border border-outline-variant/10 overflow-hidden flex flex-col">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSvs7zZJ45V5I1O4iK9rmfm6u7jPlbUB5A3rcF-bcGlWp_Dp0dkYF2bxNxOG-VkWlo-aZKzCKefaMGAotZFXnlodjAiyUpD5rRWe7H1CDCVJKgQmmx0ngLbeHb3sGmSanOsYGjrfuXaMnEs3dp6uQaHSTcnZWjCVkPVXdmP5OyX6-d5rbkU2yxYmnZDKfTZu9I-AUSYibMA4mo3W4aILX9uGs9AtupkgMKBBTtM6EmQaWfUIl8lmQ2S_0nPgtRib4vNdYnNw7yQrs"/>
+                        <div class="absolute top-4 left-4 bg-primary/40 backdrop-blur-md text-on-primary px-3 py-1 font-label-caps text-[10px] tracking-widest">JUST ADDED</div>
+                    </div>
+                    <div class="p-stack-md flex-1 flex flex-col">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">The Zenith Pavilion</h3>
+                        <p class="font-label-caps text-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span> Beverly Hills, California
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-end">
+                            <div>
+                                <span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">ASSET VALUE</span>
+                                <span class="font-headline-md text-headline-md text-secondary">$34,500,000</span>
+                            </div>
+                            <button class="glow-button bg-primary text-on-primary px-6 py-3 font-button text-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card group bg-surface-container-lowest border border-outline-variant/10 overflow-hidden flex flex-col">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg-xcJmkDtI1dpBslEXcKOqX4zGCa7kzxH0yBkP6nXBRmfCjVb3PdbPWjJDs5jFdeIZnpsgPRxY65UlA43RxYObU-spyQop3_i6rU_7c7F6M-1wQU2YAs6CpOLxVo4YxlTxqIBGyd44_ItqS2pr9Vk3w48Ek-r8jGBF0SBIT9wr2ckBnHpOivNckdetsb7DMMWuSV3zRnjYlmXvz7RM-dI-WghllgTusJEc-zU4CMtts3o1ANPK9TSPZw-U0_23ubcaGPA8o1ulA8"/>
+                    </div>
+                    <div class="p-stack-md flex-1 flex flex-col">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">Heritage Manor</h3>
+                        <p class="font-label-caps text-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span> Cotswolds, United Kingdom
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-end">
+                            <div>
+                                <span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">ASSET VALUE</span>
+                                <span class="font-headline-md text-headline-md text-secondary">£18,250,000</span>
+                            </div>
+                            <button class="glow-button bg-primary text-on-primary px-6 py-3 font-button text-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card group bg-surface-container-lowest border border-outline-variant/10 overflow-hidden flex flex-col">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx5qeYaJ-_YOl74S3a4LHfX8XH6z40i6zna_Y1AVGFeHe6KyzTvwqIjkHoF3skI43gC8FUDTAYM4D6AV2dxFHU_z0FKiYPfHSCHvIw2JuHK46wCVj3MoF2TvAPVUqYFhRzfLrPr7RB8sOHGgmVUe2z4S335eQgCkXoTFwiaz1GXrQUOP72O_ZPhlAIia-83jfilC_tF_iBcBpkIPMFSuKVF8cbVKu_oe_ljZ9Espzn3r4U2LM_K3I6hsNziakC5aWl6mLhIvAVhsk"/>
+                    </div>
+                    <div class="p-stack-md flex-1 flex flex-col">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">Azure Cliffside</h3>
+                        <p class="font-label-caps text-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span> Amalfi Coast, Italy
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-end">
+                            <div>
+                                <span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">ASSET VALUE</span>
+                                <span class="font-headline-md text-headline-md text-secondary">€42,000,000</span>
+                            </div>
+                            <button class="glow-button bg-primary text-on-primary px-6 py-3 font-button text-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card group bg-surface-container-lowest border border-outline-variant/10 overflow-hidden flex flex-col">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwr7WfWwdSkXtsAsYVofpuGi3H2-dqgie9XfaGdQp1V9mfw3765tIt4LpWle6OOZW6FlfedrL22mE0bf6Jd1KTUT3vrM7Xnp_BP1JMVqJQFlfyoe4JCtCcGjdVxRo_DiEgYRFAyTcTP7s_nr1G2gz0d7zjYbjTTfAzAXyvtG4aVT-acfGrmo9YI8WrlGWPcwrE8EKaAPbXkU_y651t0G59dCyLA9_HUUdbDbgUN1NY6-rHlU7Se172osG8MdBw-hVPe6vBCh1JdXo"/>
+                    </div>
+                    <div class="p-stack-md flex-1 flex flex-col">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">The Skyline Vault</h3>
+                        <p class="font-label-caps text-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span> New York City, USA
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-end">
+                            <div>
+                                <span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">ASSET VALUE</span>
+                                <span class="font-headline-md text-headline-md text-secondary">$21,800,000</span>
+                            </div>
+                            <button class="glow-button bg-primary text-on-primary px-6 py-3 font-button text-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card group bg-surface-container-lowest border border-outline-variant/10 overflow-hidden flex flex-col">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUA5X3p-PXi9iFjvbR6L0r49lbPWqh_RoWUqF0xj2CJA5igYWvpLfvpVQyY9SzgsvFxgm9AyUve-cUnRSwJOd4hfp__ALdKgD6tGmhxRp83HU162X8dOIu4E78ZOemEnH5SpT4Ho_HS13__YVU6Bx9OF6G7W8sY689BPYMDTP8vxFwFr5QxZhq55I0-q-VFqwJJ7Df_kDSGSF-JINB9vQRj-NN_rRlBWCqPoFItNEp9j7TvTXOjwpS6GRokatL-ALeLzrP3wU1Wu0"/>
+                    </div>
+                    <div class="p-stack-md flex-1 flex flex-col">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">Monolith Retreat</h3>
+                        <p class="font-label-caps text-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span> Marfa, Texas
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-end">
+                            <div>
+                                <span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">ASSET VALUE</span>
+                                <span class="font-headline-md text-headline-md text-secondary">$12,400,000</span>
+                            </div>
+                            <button class="glow-button bg-primary text-on-primary px-6 py-3 font-button text-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card group bg-surface-container-lowest border border-outline-variant/10 overflow-hidden flex flex-col">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPh6HfN8U4iJa92q_G4f9oh_zKYFN7L8wPHNkZzS6FpHk_Rd1EklP85p0VZkLaKwkUXZ9jc9qZedOWpcjyPCEWgalUViUBIX9ceztKPBVJPxWS6N_vVTj0LUaClSX1LT1RWtRvVwPpl9VJK5hEOR7XnGgif2nJP2GIF9E-ZR4YgVPQtebIZ0Ng1UabutNxUvk-p6r-hX29B6XGusHT4VLglaP73ITVe2mUvhNSo-eRr6Tlgg0JXhxpjICnpIG_fW-2QPgtUS5a3p8"/>
+                    </div>
+                    <div class="p-stack-md flex-1 flex flex-col">
+                        <h3 class="font-headline-md text-headline-md text-primary mb-2">Chateau de Lac</h3>
+                        <p class="font-label-caps text-label-caps text-on-surface-variant mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">location_on</span> Loire Valley, France
+                        </p>
+                        <div class="mt-auto pt-6 border-t border-outline-variant/10 flex justify-between items-end">
+                            <div>
+                                <span class="font-label-caps text-[10px] text-on-surface-variant block mb-1">ASSET VALUE</span>
+                                <span class="font-headline-md text-headline-md text-secondary">€28,900,000</span>
+                            </div>
+                            <button class="glow-button bg-primary text-on-primary px-6 py-3 font-button text-button">View Details</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="mt-stack-lg flex flex-col items-center">
+                <p class="font-label-caps text-label-caps text-on-surface-variant mb-6">Showing 6 of 42 Masterpieces</p>
+                <button class="px-10 py-4 border border-primary text-primary font-button hover:bg-primary hover:text-on-primary transition-all duration-300 group">
+                    Load More Legacy Estates
+                    <span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-y-1">expand_more</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script>
+        // MODAL STEPS INTERACTION ENGINE (SESSION-BASED)
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.querySelector('#phone-modal-gateway');
+            const modalBox = modal.querySelector('.glass-panel');
+            const step1 = document.querySelector('#gateway-step-1');
+            const step2 = document.querySelector('#gateway-step-2');
+            const phoneInput = document.querySelector('#gateway-phone-input');
+            const submitPhoneBtn = document.querySelector('#submit-gateway-phone');
+            const submitReqBtn = document.querySelector('#submit-gateway-requirement');
+            const accentLine = modal.querySelector('.input-accent-line');
+
+            const savedPhone = sessionStorage.getItem('v_legacy_user_phone');
+
+            if (!savedPhone) {
+                document.body.classList.add('overflow-hidden');
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100');
+                setTimeout(() => {
+                    modalBox.classList.remove('scale-95');
+                    modalBox.classList.add('scale-100');
+                }, 50);
+            }
+
+            phoneInput.addEventListener('focus', () => accentLine.style.width = '100%');
+            phoneInput.addEventListener('blur', () => { if (!phoneInput.value.trim()) accentLine.style.width = '0%'; });
+
+            // Handle transition from Step 1 to Step 2
+            const handlePhoneSubmission = () => {
+                const phoneNumber = phoneInput.value.trim();
+                if (phoneNumber.length >= 7) {
+                    sessionStorage.setItem('v_legacy_user_phone', phoneNumber);
+                    
+                    // Fade out Step 1
+                    step1.classList.add('opacity-0', '-translate-y-2');
+                    
+                    setTimeout(() => {
+                        step1.classList.add('hidden');
+                        step2.classList.remove('hidden');
+                        
+                        // Fade in Step 2
+                        setTimeout(() => {
+                            step2.classList.remove('opacity-0', 'translate-y-4');
+                            step2.classList.add('opacity-100', 'translate-y-0');
+                        }, 50);
+                    }, 500);
+                } else {
+                    phoneInput.style.borderColor = '#ba1a1a';
+                    setTimeout(() => phoneInput.style.borderColor = '#775a19', 1500);
+                }
+            };
+
+            // Handle completing Step 2 and closing the modal completely
+            const handleRequirementSubmission = () => {
+                const selectedRequirement = document.querySelector('input[name="asset_interest"]:checked').value;
+                sessionStorage.setItem('v_legacy_user_requirement', selectedRequirement);
+                
+                // Exit Animation Sequence
+                modalBox.classList.remove('scale-100');
+                modalBox.classList.add('scale-95');
+                modal.classList.remove('opacity-100');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+            };
+
+            submitPhoneBtn.addEventListener('click', handlePhoneSubmission);
+            phoneInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') handlePhoneSubmission(); });
+            submitReqBtn.addEventListener('click', handleRequirementSubmission);
+        });
+
+        // Intersection Observer for staggered entrance animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.property-card');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // Interaction scale mechanics
+        const buttons = document.querySelectorAll('.glow-button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.style.transform = 'scale(0.95)';
+                setTimeout(() => btn.style.transform = 'scale(1.02)', 100);
+            });
+        });
+    </script>
+</body>
+</html>
